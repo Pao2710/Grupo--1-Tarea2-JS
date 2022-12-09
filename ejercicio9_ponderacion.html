@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9 - Ponderacion de Nota</title>
+    <link rel="stylesheet" href="ponderacion.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <form action="" name="ponderacion">
+            <h2>Nota Media Ponderada</h2>
+            <h3>Primera nota 30%:</h3><input type="text" name="nota1"> </br>
+            <h3>Segunda nota 70%:</h3><input type="text" name="nota2"> </br>
+            <h3>Calcular</h3><input class="boton" type="button" name="buton1" value="Ponderar"
+                onclick="ponderar()"></br>
+            <h3>Resultado:</h3><input type="text" name="resultado">
+        </form>
+    </div>
+
+    <script>
+        function ponderar() {
+            let nota_1, nota_2, conversion1, conversion2, resultado2, total;
+
+            nota_1 = parseFloat(document.ponderacion.nota1.value);
+            nota_2 = parseFloat(document.ponderacion.nota2.value);
+            conversion1 = nota_1 * 0.30;
+            conversion2 = nota_2 * 0.70;
+            resultado2 = conversion1 + conversion2;
+            total = resultado2;
+
+            document.ponderacion.resultado.value = total;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>Calculadora</title>
+</head>
+<body>  
+    <h1>Realizar programa donde se Introducen de 3 números y el programa indica cuál es el
+        mayor de los 3</h1>
+    
+<form name="calculo_mayor">
+    Primer número: <input type="number" name="valor1"><br><br>
+    Segundo número: <input type="number" name="valor2"><br><br>
+    Tercer número: <input type="number" name="valor3"><br><br>
+    <input type="button" name="button1" value="Calcular numero mayor" onclick="numero_mayor()"> <br>
+    Resultado numero mayor: <br><br>
+    <input type="number" name="resultado">
+    <br><br>
+</form>
+
+
+<script>
+        function numero_mayor(){
+            var numero1 = document.calculo_mayor.valor1.value
+            var numero2 = document.calculo_mayor.valor2.value
+            var numero3 = document.calculo_mayor.valor3.value
+
+            if(numero1 > numero2 && numero1 > numero3){
+                document.calculo_mayor.resultado.value =numero1
+                alert('El Primer numero ingresado es mayor '+numero1)
+
+            }else if(numero2 > numero1 && numero2 > numero3){
+                document.calculo_mayor.resultado.value =numero2
+                alert('El Segundo numero ingresado es mayor '+numero2)
+            }else if(numero3 > numero1 && numero3 > numero2){
+               alert('El Tercer numero ingresado es mayor '+numero3)
+               document.calculo_mayor.resultado.value =numero3
+            }else{
+               alert('Todos los numeros son iguales'+numero3+' '+numero2+' '+numero1 )
+            }
+        }   
+</script>
+</body>
+</html>

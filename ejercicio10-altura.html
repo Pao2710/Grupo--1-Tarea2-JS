@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Peso Ideal</title>
+</head>
+
+<body>
+    <form action="" name="pesoIdeal">
+        <label for="">Ingrese su Edad:</label> <br>
+        <input type="number" name="edad" id=""><br>
+
+        <label for="">Ingrese su Altura:</label> <br>
+        <input type="text" name="sexo" id=""><br>
+
+        <label for="">Ingreso el Sexo:</label> <br>
+        <input type="number" name="altura" id=""><br>
+
+        <label for="">Ingrese su peso total:</label> <br>
+        <input type="number" name="peso_actual" id=""><br><br>
+
+        <input class="boton" type="button" name="buton1" value="calcular peso" onclick="calcular_peso()"> <br><br>
+
+        <label for="">Resultado:</label><br>
+        <input type="number" name="resultado" id=""><br>
+    </form>
+
+    <script>
+        function calcular_peso() {
+            let edad, sexo, altura, peso_actual, resultado, total;
+            sexo = (document.pesoIdeal.sexo.value)
+            edad = parseFloat(document.pesoIdeal.edad.value)
+
+            if (sexo == 'MUJER') {
+                peso_actual = parseFloat(document.pesoIdeal.peso_actual.value)
+                altura = parseFloat(document.pesoIdeal.altura.value)
+                resultado = peso_actual / (altura) * 100
+
+                document.pesoIdeal.resultado.value = resultado
+
+                alert('Usted es ' + sexo + ' su edad es: ' + edad + ' su peso actual es: ' + resultado)
+            } else {
+                peso_actual = parseFloat(document.pesoIdeal.peso_actual.value)
+                altura = parseFloat(document.pesoIdeal.altura.value)
+                resultado = peso_actual / altura;
+
+                document.pesoIdeal.resultado.value = resultado
+
+                alert('Usted es ' + sexo + ' su edad es: ' + edad + ' su peso actual es: ' + resultado)
+            }
+        }
+
+    </script>
+</body>
+
+</html>
